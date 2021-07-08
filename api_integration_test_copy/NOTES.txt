@@ -1,0 +1,29 @@
+In order to run this test ,
+
+please create a folder -api_integration_test and place the script file
+
+The tool was built using pytest. since it is robut and can be adapated to a complex API like kraken at the command line ,
+
+- on using the command "pytest -sv --html report.html test_basic.py --capture sys -rP\"
+- the html report is generated with the logs out in the project folder itself
+- the API used here are based on the public endpoints - https://www.kraken.com/features/api
+- Test Cases covered
+    - Check Status code on the response
+    _ Validate Schema of the response
+    - ensure the top ask price is greater than the top bid for the depth 1
+    - ensure that the timestamps received were strictly increasing over time.
+    - Send invalid REST API requests or WebSockets API subscription requests and check that the requests fail with an appropriate error
+      message.
+    - Various JSON messages used in the API responses and check that the values have the correct data types.
+        - there is flaw in my last test case logic. since i use the json.dumps, the entire messages is converted into a string and is not validated as expected .
+
+    - Sample Report is placed as report.html in the project folder
+    - intentionally left the warnings on to display the report as intended .
+
+
+
+
+
+
+
+
